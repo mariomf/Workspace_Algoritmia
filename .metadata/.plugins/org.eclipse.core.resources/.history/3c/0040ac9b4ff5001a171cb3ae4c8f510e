@@ -1,0 +1,58 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class CompareTest {
+
+	public static void main(String[] args) {
+		
+		Car car1 = new Car("Chevrolet", "sport" , "red");
+		Car car2 = new Car("Nissan", "4x4", "blue");
+		Car car3 = new Car("Renault", "pick-up", "yellow");
+		
+		List<Car> carList = new ArrayList<>();
+		carList.add(car1);
+		carList.add(car2);
+		carList.add(car3);
+		
+		System.out.println(carList);
+		
+		Collections.sort(carList, new Comparator<Car>() {
+
+			@Override
+			public int compare(Car car0, Car car1) {
+				return car0.getBrand().compareTo(car1.getBrand());
+			}
+			
+		});
+		
+		System.out.println(carList);
+		
+		
+
+	}
+
+}
+
+class Car {
+	private String brand;
+	private String type;
+	private String color;
+	
+	Car(String brand, String type, String color){
+		this.brand = brand;
+		this.type  = type;
+		this.color = color;
+	};
+	
+	public String getBrand() {
+		return brand;
+	}
+	public String getType() {
+		return type;
+	}
+	public String getColor() {
+		return color;
+	}
+}

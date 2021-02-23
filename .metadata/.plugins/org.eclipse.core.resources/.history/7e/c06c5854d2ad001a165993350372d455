@@ -1,0 +1,41 @@
+import java.util.Stack;
+
+public class Balance {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String input= "(())";
+		
+		Stack stack = new Stack<String>();
+		
+		for( char c : input.toCharArray()) {
+	
+			if(c == '(' || c == '[' || c == '{' ) {
+				stack.push(c);
+				continue;
+			}
+			if(c == ')' && stack.peek() == ")" ){
+				stack.pop();
+				continue;
+			}
+			if(c == ']' && stack.peek() == "]"){
+				stack.pop();
+				continue;
+			}
+			if(c == '}' && stack.peek() == "}"){
+				stack.pop();
+				continue;
+			}
+			if(c == ')' || c == ']' || c == '}'){
+				stack.empty();
+				break;
+			}
+		}
+		
+		System.out.print(stack.isEmpty());
+		
+		
+
+	}
+
+}

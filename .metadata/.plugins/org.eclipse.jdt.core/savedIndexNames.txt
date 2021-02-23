@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+/home/mariomucino/CodeBase/Workspace_Algoritmia/.metadata/.plugins/org.eclipse.jdt.core
+646308851.index
+1579837307.index

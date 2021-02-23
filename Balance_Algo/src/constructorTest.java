@@ -1,0 +1,104 @@
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class constructorTest {
+	
+	int num = 10;
+	
+	public constructorTest() {};
+	
+	public int hacerTest(int algo) {
+		return algo;
+	}
+	
+	public void hacerTest1(Animal a) {
+		var animal = a;
+		System.out.println(animal.eye);
+		
+	}
+	public Animal creatAnimal() {
+		Animal animal = new Animal("eye");
+		return animal;
+	}
+
+	public static void main(String[] args) {
+		var apples = 10;
+		apples = (byte) 5;
+		apples = 10000;
+		
+		System.out.println(apples);
+		constructorTest newTest = new constructorTest();
+		// TODO Auto-generated method stub
+		//Animal animal = new Animal("otro"); 
+		
+		Animal animal = newTest.creatAnimal();
+		animal.eye = "blue";
+		newTest.hacerTest1(animal);
+		/*System.out.println(animal.eye);
+		System.out.println(animal.otro);
+		System.out.println(animal.otro1);*/
+		Animal animal1 = animal;
+		Animal animal2 = animal;
+		System.out.println(animal.equals(animal1));
+		System.out.println(animal.num);
+		
+		constructorTest x = animal;
+		//Animal y = (Animal) newTest;
+		//System.out.println(x.hacerTest(1));
+		//System.out.println(newTest.hacerTest(1));
+		
+		String u = "a";
+		//System.out.println(u+"b");
+		u = u+"b";
+		//System.out.println(u);
+		
+		//HashSet
+		HashSet<Animal> animales = new HashSet();
+		/*System.out.println(animales.add(animal));
+		System.out.println(animales.add(animal1));
+		System.out.println(animales.add(animal2));*/
+		Iterator<Animal> iterator = animales.iterator();
+		while(iterator.hasNext()) {
+			Animal nextAnimal = iterator.next();
+			String algo = nextAnimal.eye;
+			//System.out.println(algo);
+		}
+	
+
+	}
+	
+	
+	public class Animal extends constructorTest{
+		String eye;
+		String otro;
+		String otro1;
+		
+		public Animal() {
+		};
+		public Animal(String eye) {
+			super();
+		}
+		
+		public Animal(String eye, String otro) {
+			this(eye, otro, "otro1");			
+		}
+		
+		public Animal(String eye, String otro, String otro1) {
+			this.eye = eye;
+			this.otro = otro;
+			this.otro1 = otro1;
+		}
+		
+		public int hacerTest(int algo) {
+			return algo + 10;
+		}
+		
+		public int hacerTest(String algo) {
+			return 10;
+		}
+	}
+}
+
+class Human{
+	
+}

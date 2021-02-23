@@ -1,0 +1,89 @@
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class constructorTest {
+	
+	int num = 10;
+	
+	public constructorTest() {};
+	
+	public int hacerTest(int algo) {
+		return algo;
+	}
+	
+	public Animal creatAnimal() {
+		Animal animal = new Animal("eye");
+		return animal;
+	}
+
+	public static void main(String[] args) {
+		
+		constructorTest newTest = new constructorTest();
+		// TODO Auto-generated method stub
+		//Animal animal = new Animal("otro"); 
+		
+		Animal animal = newTest.creatAnimal();
+		System.out.println(animal.eye);
+		System.out.println(animal.otro);
+		System.out.println(animal.otro1);
+		Animal animal1 = animal;
+		Animal animal2 = animal;
+		System.out.println(animal.num);
+		
+		constructorTest x = animal;
+		//Animal y = (Animal) newTest;
+		System.out.println(x.hacerTest(1));
+		System.out.println(newTest.hacerTest(1));
+		
+		String u = "a";
+		System.out.println(u+"b");
+		u = u+"b";
+		System.out.println(u);
+		
+		//HashSet
+		HashSet animales = new HashSet();
+		animales.add(animal);
+		animales.add(animal1);
+		animales.add(animal2);
+		Iterator iterator = animales.iterator();
+		while(iterator.hasNext()) {
+			Animal aux = (Animal) iterator.next();
+			System.out.println(aux + "");
+		}
+	
+
+	}
+	
+	
+	public class Animal extends constructorTest{
+		String eye;
+		String otro;
+		String otro1;
+		
+		public Animal() {
+		};
+		public Animal(String eye) {
+			super();
+		}
+		
+		public Animal(String eye, String otro) {
+			this(eye, otro, "otro1");			
+		}
+		
+		public Animal(String eye, String otro, String otro1) {
+			this.eye = eye;
+			this.otro = otro;
+			this.otro1 = otro1;
+		}
+		
+		public int hacerTest(int algo) {
+			return algo + 10;
+		}
+		
+		public int hacerTest(String algo) {
+			return 10;
+		}
+	}
+	
+
+}
